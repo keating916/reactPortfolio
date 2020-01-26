@@ -1,0 +1,169 @@
+html {
+  width: 100%;
+  align-content: center;
+  background-image: url(http://inn.spb.ru/images/400/DSC100419813.jpg);
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+}
+main {
+  text-align: center;
+  width: 80%;
+  padding-left: 10%; 
+}
+.toplistdiv {
+  width: 60%;
+  min-width: 500px;
+  padding-left: 20%;
+  text-align: left;
+}
+.topitems {
+  text-align: center
+
+}
+.topitems li {
+  text-align: left;
+}
+
+#nav {
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    background-color: black;
+}
+
+#nav li {
+    float:right;
+
+}
+
+#nav li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 1em;
+    text-decoration: none;
+}
+
+#nav li :hover {
+    color: black;
+    background-color: white;
+}
+
+.body-element {
+  text-align: center;
+}
+h1 {
+  font-size: 48px;
+}
+.labels {
+  display: block;
+  color: white;
+}
+div {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+form {
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+  padding: 2%;
+  background-color: #06879e;
+}
+.input {
+  border-radius: 10px;
+  width: 95%;
+  padding: 2%;
+}
+
+label,
+.dropdown {
+  padding-bottom: 1%;
+}
+#time-selector {
+  display: flex;
+  flex-wrap: wrap;
+  columns: 2;
+}
+.dropdown {
+  width: 40%;
+  text-align: center;
+  margin: auto;
+}
+select {
+  height: 45px;
+  border-radius: 10px;
+  padding: 2%;
+  color: black;
+  background-color: #fff;
+}
+
+.radioLabel, .check {
+  color: white;
+}
+
+.radios, .checks{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+button {
+  width: 90%;
+  margin-left:5%;
+  height: 45px;
+  border-radius: 10px;
+}
+
+#welcome-section {
+  height: 100vh;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  max-width: 300px;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+  text-decoration: none;
+}
+
+
+
+.tiles-images {
+  width: 100%;
+  max-width: 300px;
+  height:13em;
+  max-height: 300px;
+}
+
+@media only screen and (max-width: 300px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+#projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
