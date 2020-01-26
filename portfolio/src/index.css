@@ -1,7 +1,7 @@
 html {
   width: 100%;
   align-content: center;
-  background-image: url(http://inn.spb.ru/images/400/DSC100419813.jpg);
+  background-color: lightskyblue;
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
@@ -12,18 +12,17 @@ main {
   padding-left: 10%; 
 }
 .toplistdiv {
-  width: 60%;
-  min-width: 500px;
-  padding-left: 20%;
+  display: inline-block;
   text-align: left;
 }
 .topitems {
-  text-align: center
-
+  text-align: center;
+  display: inline-block;
 }
+/*
 .topitems li {
   text-align: left;
-}
+}*/
 
 #nav {
     list-style-type: none;
@@ -125,6 +124,8 @@ button {
 
 #welcome-section {
   height: 100vh;
+  display: inline-block;
+  text-align: center;
 }
 
 .card {
@@ -138,7 +139,7 @@ button {
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
 }
 
 /* Add some padding inside the card container */
