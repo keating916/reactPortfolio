@@ -12,7 +12,6 @@ function Header() {
             <p>
               I have been studying programming since December 2018, and I have been devouring material as fast as humanly possible. I started out with the basics of Python, as everything I read said that was the easiest to get started with. Then my current employer needed help with his website, so I dove into HTML/CSS/JS, and I haven't come back up for air!
             </p>
-            <button onClick={window.open("./text.html", 'popUpWindow', 'height=500,width=400,left=50%,top=100,resizable=yes,scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=no')} value="Nav" />
             <p>
               I have completed the equivilent of 600 hours of curriculum from <a href="https://www.freecodecamp.org">FreeCodeCamp</a> and have loved every minute of it. I have read books on Node.Js and Express server setup, and I am simultaneously going through <a target="_new" href="https://www.theodinproject.com/">The Odin Project</a>.
             </p>
