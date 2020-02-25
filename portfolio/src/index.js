@@ -20,28 +20,28 @@ import './assets/calc.css'
 
 const data = [
   {
-      id: 'reactRps',
+      value: 'reactRps',
       func: RPS,
       img: rps,
       title: "Rock Paper Scissors",
       description: 'Text based RPS game'
   },
   {
-      id: 'goog',
+      value: 'goog',
       func: Goog,
       img: "https://blog.hubspot.com/hubfs/image8-2.jpg",
       title: "Google Home Page",
       description: "Reproduction of Google's Home page",
   },
   {
-      id: 'reactCalc',
+      value: 'reactCalc',
       func: Calculator,
       img: snip,
       title: 'Javascript Calculator',
       description: "Browser calculator using React.js"
   },
   {
-      id: 'reactEtch',
+      value: 'reactEtch',
       func: Etch,
       img: etch,
       title: "Etch-A-Sketch",
@@ -95,9 +95,9 @@ class Projects extends React.Component {
   }
 
   toggleShow(evt) {
-    console.log(evt.target.id)
-    let b = this.state[evt.target.id]
-    this.setState({[evt.target.id]: !b})
+    console.log(evt.target.value)
+    let b = this.state[evt.target.value]
+    this.setState({[evt.target.value]: !b})
     console.log(this.state)
   }
 
@@ -107,14 +107,15 @@ class Projects extends React.Component {
     return(
           <div>
             {this.props.projects.map(item => 
-              (<div className="card project-tile" onClick={this.toggleShow} id={item.id}><a href={item.src}>
-                    <img src={item.img} alt={item.title} class="tiles-images" />
-                    <div className="container">
-                        <h4><b>{item.title}</b></h4>
-                        <p>{item.description}</p>
+              (<div className="card project-tile" onClick={e => this.toggleShow(e)} value={item.value}><a href={item.src}>
+                    <img value={item.value} onClick={e => this.toggleShow(e)} src={item.img} alt={item.title} class="tiles-images" />
+                    <div value={item.value} onClick={e => this.toggleShow(e)} className="container">
+                        <h4 value={item.value} onClick={e => this.toggleShow(e)}><b>{item.title}</b></h4>
+                        <p value={item.value} onClick={e => this.toggleShow(e)}>{item.description}</p>
                     </div>
-                    <div style={{display: this.state[item.id] === true ? 'block' : 'none'}}>
+                    <div style={{display: this.state[item.value] === true ? 'block' : 'none'}}>
                       <item.func  />
+                      <button type="close" value={item.value} {e => this.toggleShow(e)}>Close</button>
                     </div>
                     
                 </a></div>))}
