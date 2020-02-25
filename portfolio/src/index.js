@@ -10,6 +10,8 @@ import Calculator from './projects/reactCalc';
 import Goog from './projects/googReact'
 import Etch from './projects/etchReact'
 import RPS from './projects/rpsReact'
+import Quote from './projects/simpsonQuote'
+import Markdown from './projects/markdownPreviewer'
 
 import etch from './assets/etch.jpg';
 import rps from './assets/rps.png';
@@ -46,6 +48,20 @@ const data = [
       img: etch,
       title: "Etch-A-Sketch",
       description: "Etch-A-Sketch with your mouse!",
+  }, 
+  {
+      value: 'quote',
+      func: Quote,
+      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdT2Y_WWGYds4UsHq1Yk-J_CyWXRQu-41DwuXm6mC8HboAzNWD',
+      title: "Simpsons Quote Generator",
+      description: "Funny Quotes pulled from API"
+  }, 
+  {
+      value: 'markdown',
+      func: Markdown,
+      img: "https://github.githubassets.com/images/modules/logos_page/Octocat.png",
+      title: "Markdown Previewer",
+      description: "Github Style HTML Markdown Previewer,
   }
 ]
 
@@ -168,12 +184,10 @@ class Page extends React.Component {
         return(
             <div>
                 <Nav />
-                <Projects projects={data} />
                 <Header />
                 {form(this.state.formRender, this.state.name, this.state.email, this.state.comments, this.handleChange, this.handleSubmit)}
-                
-            </div>
-                  
+                <Projects projects={data} />
+            </div>  
         )
     }
 }
