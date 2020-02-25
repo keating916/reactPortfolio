@@ -1,44 +1,54 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './assets/calc.css'
+import * as serviceWorker from './serviceWorker';
+
+
+import Header from './Header';
 import Nav from './Nav';
+
 import Calculator from './projects/reactCalc';
 import Goog from './projects/googReact'
 import Etch from './projects/etchReact'
 import RPS from './projects/rpsReact'
-import * as serviceWorker from './serviceWorker';
-import Header from './Header';
-//import Form from './Form';
+
 import etch from './assets/etch.jpg';
 import rps from './assets/rps.png';
 import snip from './assets/snip.png';
+
+import './index.css';
+import './assets/calc.css'
+
 const data = [
-    {
-        src: null,
-        img: rps,
-        title: "Rock Paper Scissors",
-        description: 'Text based RPS game'
-    },
-    {
-        src: "./projects/goog.html",
-        img: "https://blog.hubspot.com/hubfs/image8-2.jpg",
-        title: "Google Home Page",
-        description: "Reproduction of Google's Home page",
-    },
-    {
-        src: './projects.calc.html',
-        img: snip,
-        title: 'Javascript Calculator',
-        description: "Browser calculator using React.js"
-    },
-    {
-        src: './projects/etch.html',
-        img: etch,
-        title: "Etch-A-Sketch",
-        description: "Etch-A-Sketch with your mouse!",
-    }
+  {
+      id: 'reactRps',
+      func: RPS,
+      img: rps,
+      title: "Rock Paper Scissors",
+      description: 'Text based RPS game'
+  },
+  {
+      id: 'goog',
+      func: Goog,
+      img: "https://blog.hubspot.com/hubfs/image8-2.jpg",
+      title: "Google Home Page",
+      description: "Reproduction of Google's Home page",
+  },
+  {
+      id: 'reactCalc',
+      func: Calculator,
+      img: snip,
+      title: 'Javascript Calculator',
+      description: "Browser calculator using React.js"
+  },
+  {
+      id: 'reactEtch',
+      func: Etch,
+      img: etch,
+      title: "Etch-A-Sketch",
+      description: "Etch-A-Sketch with your mouse!",
+  }
 ]
+
 
 const form = (render, name, email, comments, change, sub) => {
     if(render) {
@@ -72,6 +82,48 @@ const form = (render, name, email, comments, change, sub) => {
     }
   }
 
+class Projects extends React.Component {
+  constructor(props) {
+    super(props); 
+    this.state ={
+      reactRps: false,
+      goog: false, 
+      reactCalc: false,
+      reactEtch: false      
+    }
+    this.toggleShow = this.toggleShow.bind(this);
+  }
+
+  toggleShow(evt) {
+    console.log(evt.target.id)
+    let b = this.state[evt.target.id]
+    this.setState({[evt.target.id]: !b})
+    console.log(this.state)
+  }
+
+
+  render() {
+
+    return(
+          <div>
+            {this.props.projects.map(item => 
+              (<div className="card project-tile" onClick={this.toggleShow} id={item.id}><a href={item.src}>
+                    <img src={item.img} alt={item.title} class="tiles-images" />
+                    <div className="container">
+                        <h4><b>{item.title}</b></h4>
+                        <p>{item.description}</p>
+                    </div>
+                    <div style={{display: this.state[item.id] === true ? 'block' : 'none'}}>
+                      <item.func  />
+                    </div>
+                    
+                </a></div>))}
+          </div>
+        )
+     
+  }
+}
+
 class Page extends React.Component {
     constructor(props) {
         super(props);
@@ -83,6 +135,7 @@ class Page extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        //this.renderProject = this.renderProject.bind(this);
     }
 
   handleChange(evt) {
@@ -114,17 +167,12 @@ class Page extends React.Component {
         return(
             <div>
                 <Nav />
-                <RPS />
+                <Projects projects={data} />
                 <Header />
                 {form(this.state.formRender, this.state.name, this.state.email, this.state.comments, this.handleChange, this.handleSubmit)}
-                {data.map(item => (<div className="card project-tile"><a href={item.src}>
-                    <img src={item.img} alt={item.title} class="tiles-images" />
-                    <div className="container">
-                        <h4><b>{item.title}</b></h4>
-                        <p>{item.description}</p>
-                    </div>
-                </a></div>))}
+                
             </div>
+                  
         )
     }
 }
