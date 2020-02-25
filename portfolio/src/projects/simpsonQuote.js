@@ -1,4 +1,4 @@
-class Quote extends React.Component {
+export default class Quote extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
