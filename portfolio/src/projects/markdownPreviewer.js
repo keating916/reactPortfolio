@@ -1,3 +1,6 @@
+import React from 'react';
+import marked from 'marked';
+
 export default class Quote extends React.Component {
   constructor(props) {
     super(props);

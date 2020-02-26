@@ -20,48 +20,48 @@ import snip from './assets/snip.png';
 import './index.css';
 import './assets/calc.css'
 
-const data = [
+const projectData = [
   {
-      value: 'reactRps',
+      id: 'reactRps',
       func: RPS,
       img: rps,
       title: "Rock Paper Scissors",
       description: 'Text based RPS game'
   },
   {
-      value: 'goog',
+      id: 'goog',
       func: Goog,
       img: "https://blog.hubspot.com/hubfs/image8-2.jpg",
       title: "Google Home Page",
       description: "Reproduction of Google's Home page",
   },
   {
-      value: 'reactCalc',
+      id: 'reactCalc',
       func: Calculator,
       img: snip,
       title: 'Javascript Calculator',
       description: "Browser calculator using React.js"
   },
   {
-      value: 'reactEtch',
+      id: 'reactEtch',
       func: Etch,
       img: etch,
       title: "Etch-A-Sketch",
       description: "Etch-A-Sketch with your mouse!",
   }, 
   {
-      value: 'quote',
+      id: 'quote',
       func: Quote,
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdT2Y_WWGYds4UsHq1Yk-J_CyWXRQu-41DwuXm6mC8HboAzNWD',
       title: "Simpsons Quote Generator",
       description: "Funny Quotes pulled from API"
   }, 
   {
-      value: 'markdown',
+      id: 'markdown',
       func: Markdown,
       img: "https://github.githubassets.com/images/modules/logos_page/Octocat.png",
       title: "Markdown Previewer",
-      description: "Github Style HTML Markdown Previewer,
+      description: "Github Style HTML Markdown Previewer",
   }
 ]
 
@@ -105,15 +105,19 @@ class Projects extends React.Component {
       reactRps: false,
       goog: false, 
       reactCalc: false,
-      reactEtch: false      
+      reactEtch: false, 
+      markdown: false,
+      quote: false,
+
     }
     this.toggleShow = this.toggleShow.bind(this);
   }
 
   toggleShow(evt) {
-    console.log(evt.target.value)
-    let b = this.state[evt.target.value]
-    this.setState({[evt.target.value]: !b})
+    console.log(evt.target.id)
+    let b = this.state[evt.target.id]
+    console.log(b);
+    this.setState({[evt.target.id]: !b})
     console.log(this.state)
   }
 
@@ -123,18 +127,21 @@ class Projects extends React.Component {
     return(
           <div>
             {this.props.projects.map(item => 
-              (<div className="card project-tile" onClick={e => this.toggleShow(e)} value={item.value}><a href={item.src}>
-                    <img value={item.value} onClick={e => this.toggleShow(e)} src={item.img} alt={item.title} class="tiles-images" />
-                    <div value={item.value} onClick={e => this.toggleShow(e)} className="container">
-                        <h4 value={item.value} onClick={e => this.toggleShow(e)}><b>{item.title}</b></h4>
-                        <p value={item.value} onClick={e => this.toggleShow(e)}>{item.description}</p>
-                    </div>
-                    <div style={{display: this.state[item.value] === true ? 'block' : 'none'}}>
-                      <item.func  />
-                      <button type="close" value={item.value} {e => this.toggleShow(e)}>Close</button>
+              (<div><div className="card project-tile" onClick={e => this.toggleShow(e)} id={item.id} style={{display: 'inline-block'}}>
+                <a href={item.src}>
+                    <img id={item.id}  src={item.img} alt={item.title} class="tiles-images" />
+                    <div id={item.id} className="container">
+                        <h4 id={item.id}><b id={item.id}>{item.title}</b></h4>
+                        <p id={item.id}>{item.description}</p>
                     </div>
                     
-                </a></div>))}
+                </a>
+              </div>
+              <div style={{display: this.state[item.id] === true ? 'block' : 'none'}} class="popup">
+                <button type="close" class="close" id={item.id} onClick={e => this.toggleShow(e)}>X</button>
+                <item.func  />
+              </div></div>
+              ))}
           </div>
         )
      
@@ -186,7 +193,7 @@ class Page extends React.Component {
                 <Nav />
                 <Header />
                 {form(this.state.formRender, this.state.name, this.state.email, this.state.comments, this.handleChange, this.handleSubmit)}
-                <Projects projects={data} />
+                <Projects projects={projectData} />
             </div>  
         )
     }
