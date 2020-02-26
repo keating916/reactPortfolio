@@ -84,7 +84,7 @@ const form = (render, name, email, comments, change, sub) => {
                   <textarea className = "input" type="textbox" id="comments" name="comments" value={comments} onChange={change} ></textarea>
                 </div>
                 <div>
-                  <button type="submit" id="submit">Submit</button>
+                  <button type="submit" id="formSubmit">Submit</button>
                 </div>
               </form>
             </section>
