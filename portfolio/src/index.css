@@ -6,23 +6,16 @@ html {
   background-repeat: repeat;
   background-position: center;
 }
-main {
-  text-align: center;
-  width: 80%;
-  padding-left: 10%; 
-}
+
 .toplistdiv {
   display: inline-block;
   text-align: left;
 }
+
 .topitems {
   text-align: center;
   display: inline-block;
 }
-/*
-.topitems li {
-  text-align: left;
-}*/
 
 #nav {
     list-style-type: none;
@@ -54,20 +47,11 @@ main {
     background-color: white;
 }
 
-.body-element {
-  text-align: center;
-}
-h1 {
-  font-size: 48px;
-}
 .labels {
   display: block;
   color: white;
 }
-div {
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
+
 form {
   border: 2px solid black;
   border-radius: 20px;
@@ -77,6 +61,7 @@ form {
   padding: 2%;
   background-color: #06879e;
 }
+
 .input {
   border-radius: 10px;
   width: 95%;
@@ -87,35 +72,8 @@ label,
 .dropdown {
   padding-bottom: 1%;
 }
-#time-selector {
-  display: flex;
-  flex-wrap: wrap;
-  columns: 2;
-}
-.dropdown {
-  width: 40%;
-  text-align: center;
-  margin: auto;
-}
-select {
-  height: 45px;
-  border-radius: 10px;
-  padding: 2%;
-  color: black;
-  background-color: #fff;
-}
 
-.radioLabel, .check {
-  color: white;
-}
-
-.radios, .checks{
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-between;
-}
-button {
+#formSubmit {
   width: 90%;
   margin-left:5%;
   height: 45px;
@@ -148,7 +106,9 @@ button {
   text-decoration: none;
 }
 
-
+.project-tile {
+  max-width: 20%;
+}
 
 .tiles-images {
   width: 100%;
