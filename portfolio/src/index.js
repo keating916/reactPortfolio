@@ -18,7 +18,6 @@ import rps from './assets/rps.png';
 import snip from './assets/snip.png';
 
 import './index.css';
-import './assets/calc.css'
 
 const projectData = [
   {
@@ -125,12 +124,12 @@ class Projects extends React.Component {
   render() {
 
     return(
-          <div>
+          <div id="projects">
             {this.props.projects.map(item => 
               (<div><div className="card project-tile" onClick={e => this.toggleShow(e)} id={item.id} style={{display: 'inline-block'}}>
                 <a href={item.src}>
                     <img id={item.id}  src={item.img} alt={item.title} class="tiles-images" />
-                    <div id={item.id} className="container">
+                    <div id={item.id} className="cardContainer">
                         <h4 id={item.id}><b id={item.id}>{item.title}</b></h4>
                         <p id={item.id}>{item.description}</p>
                     </div>
@@ -139,7 +138,9 @@ class Projects extends React.Component {
               </div>
               <div style={{display: this.state[item.id] === true ? 'block' : 'none'}} class="popup">
                 <button type="close" class="close" id={item.id} onClick={e => this.toggleShow(e)}>X</button>
-                <item.func  />
+                <div id="functionContents">
+                <item.func class="function" />
+                </div>
               </div></div>
               ))}
           </div>
@@ -191,9 +192,17 @@ class Page extends React.Component {
         return(
             <div>
                 <Nav />
-                <Header />
-                {form(this.state.formRender, this.state.name, this.state.email, this.state.comments, this.handleChange, this.handleSubmit)}
-                <Projects projects={projectData} />
+                <div id="topDiv">
+                  <Header />
+                </div>
+                
+                <div id="formDiv">
+                  {form(this.state.formRender, this.state.name, this.state.email, this.state.comments, this.handleChange, this.handleSubmit)}
+                </div>
+                <div id="projectDiv">
+                  <Projects projects={projectData} />
+                </div>
+                
             </div>  
         )
     }

@@ -108,7 +108,7 @@ export default class Calculator extends React.Component {
 
     render() {
         return(
-            <body id='container' class="projects">
+            <body id='calcContainer' class="projects">
                 <div id="calculator">
                 <div className = "row">
                     <p type = "text" id = "display" value={this.state.display}>{this.state.display}</p>

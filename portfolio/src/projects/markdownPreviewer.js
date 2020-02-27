@@ -68,9 +68,9 @@ Function 1
       <section style={{textAlign: 'center'}}>
         <h1>HTML Markdown Previewer!</h1>
         <div id="input-box">
-          <textarea id='editor' value={this.state.value} onChange={this.handleChange} style={{width: '60%', height: '50vh'}} />
+          <textarea id='markedEditor' value={this.state.value} onChange={this.handleChange} />
         </div>
-        <div id="container" style={{display: 'inline-block', width: '60%', height: '50vh'}}>
+        <div id="markedContainer">
           <MarkdownExample ht={this.state.parsed} />
         </div>
       </section>

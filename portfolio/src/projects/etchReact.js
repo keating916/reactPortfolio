@@ -67,7 +67,7 @@ export default class Etch extends React.Component {
                     <button id = "clear" onClick={this.handleClear}>Clear</button>
                     <button id="color" onClick={this.handleColor}>Change Color</button>
                 </div>
-                <div id = "container" style={divGrid(this.state.columns)}>
+                <div id = "etchContainer" style={divGrid(this.state.columns)}>
                     {this.state.array.map(i => <div id={i} onMouseOver={e => this.handleMouseOver(e)} style={{backgroundColor: "white"}} ></div>)}</div>
             </body>
         )
