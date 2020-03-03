@@ -1,21 +1,19 @@
 html {
   width: 100%;
   align-content: center;
-  background-color: lightskyblue;
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
+  background: rgb(45,12,6);
+  background: radial-gradient(circle, rgba(45,12,6,1) 0%, rgba(22,5,246,0.5088235123150823) 0%, rgba(206,248,142,1) 72%, rgba(158,239,255,1) 100%);
+  /*cssgradient.io*/
+  margin: auto;
+  text-align: center;
 }
 
-.toplistdiv {
+#header-lists {
   display: inline-block;
   text-align: left;
+  list-style-type: disc;
 }
 
-.topitems {
-  text-align: center;
-  display: inline-block;
-}
 
 #nav {
     list-style-type: none;
@@ -87,6 +85,8 @@ label,
   height: 100vh;
   display: inline-block;
   text-align: center;
+  max-width: 800px;
+
 }
 
 .card {
@@ -145,7 +145,7 @@ label,
   height: 90%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(255, 255, 255, 0.993); /* Solid White*/
+  background-color: rgba(253, 253, 253, 0.993); /* Solid White*/
 }
 
 #functionContents {
@@ -157,6 +157,7 @@ label,
   width: 80%;
   height: 100vh;
   align-content: center;
+  text-align: center;
   display: inline-block;
 }
 
@@ -186,9 +187,10 @@ label,
   min-width: 250px;
   height: 50vh;
   column-count: 4;
-
+  margin: auto;
   
 }
+
 #calculator {
   background-color:rgb(29, 70, 158);
   float: none;
@@ -201,8 +203,7 @@ label,
   background-color: white;
   border: 1px black;
   border-radius: 10px;
-
-  padding-bottom: 5%;
+  height: 3vh;
 }
 
 #output{
@@ -227,3 +228,79 @@ button {
   height: 100%;
   padding: 0px;
 }
+
+.googheader, .googfooter {
+  padding: 0;
+  margin: 0;
+  margin-right: 5%;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+#googmain {
+  max-width: 500px;
+  padding: 10%;
+  margin: auto;
+  align-content: center;
+  text-align: center;
+  justify-content: space-between;
+  
+}
+
+#googheader, #googfooter, .googleft, .googright, #gLefthead, #gRighthead, #gleftfoot, #grightfoot {
+  display: inline;
+  text-decoration: none;
+  padding: 2%;  
+}
+
+
+
+#query {
+  border-radius: 15px;
+  height: 30px;
+  width: 100%;
+}
+
+#logo {
+  width: auto;
+  height: auto;
+  max-width: 272px;
+  margin: auto;
+}
+
+
+#googbuttons  {
+  padding: 0;
+  padding-bottom: auto;
+  margin-top: -5%;
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: center;
+  
+}
+
+#etchContainer {
+  margin: auto;
+  margin-top: 3vh;
+}
+
+#twitterImg {
+  max-width: 40px;
+  padding-top: 2vh;
+}
+
+#new-quote {
+  background-color: yellow;
+  margin-top: 2vh;
+  height: 5vh;
+}
+

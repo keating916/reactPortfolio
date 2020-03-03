@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+function add(x, y) {
+    return x + y
+  }
+
 export default class Calculator extends React.Component {
     constructor(props) {
         super(props);
@@ -20,8 +24,12 @@ export default class Calculator extends React.Component {
     }
 
     handleClick(e) {
+        let all = /[\*\/\+\-]/
+        let last = this.state.display.split(all)
         if(this.state.display === "0" && e.target.value != ".") {
             this.setState({display: e.target.value})
+        }else if(e.target.value == "." && /\./g.test(last[last.length-1])) {
+            return
         }else {
             this.setState({
                   display: this.state.display+e.target.value,
@@ -33,7 +41,7 @@ export default class Calculator extends React.Component {
     handleBackspace() {
         let back = this.state.display.split("");
         back.pop();
-        if(back = []) {
+        if(back.length == 0) {
             back = ["0"]
         }
         this.setState({display: back.join("")})
@@ -41,54 +49,90 @@ export default class Calculator extends React.Component {
 
     handleOperators(e) {
         let key = e.target.value;
-        let all = /[\*\/\+\-]/
-        this.setState((prevState) => {
-            let d = this.state.display
-            let pd = prevState.display.length
-            if(d.length > pd) {
-                pd = d
-            }
-            if(all.test(d.charAt(pd-1))) {
-                return{
-                    display: prevState.display.substr(0,prevState.display.length-1)+key,
-                }
-            }else {
-                return {
-                    display: d+key,   
-                }
-            }
-        })
+        let al = /[\*\/\+\-]/
+        let l = this.state.display.length-1;
+        let dis = this.state.display
+        if(key == "-") {
+          if(dis[l] == "-") {
+            this.setState(prevState => {
+                return{display: prevState}
+                })
+          }else {
+            this.setState({display: dis+key})
+          }
+        }else {
+          if(al.test(dis[l-1]) && al.test(dis[l])) {
+            dis = dis.split("")
+            dis.splice(l-1,2,key)
+            dis = dis.join("")
+            this.setState({display: dis})
+          }else if(al.test(dis[l])) {
+            dis = dis.split("")
+            dis.splice(l,1,key)
+            dis = dis.join("")
+            this.setState({display: dis})
+          }else{
+            this.setState({display: dis+key})
+          }
+        }
     }
 
     handleEquals() {
-        let operators = ["*", "/", "+", "-"];
+        let operators = [ "-","*", "/", "+"];
         let all = /[\*\/\+\-]/g
-        let numbers = this.state.display.split(all);
+        let decimal = /./;
+        let numbers = [];
+        let n = this.state.display.split(all)
+        n.map(e => numbers.push(parseFloat(e)))
+        let len = numbers.length-1
         let ops = this.state.display.split("").filter(letter => all.test(letter))
-        if(numbers.length == ops.length) {
-            ops.pop()
+        for(let i = 0; i < numbers.length; i++) {
+          if(Number.isNaN(numbers[i]) && i !== len) {
+            numbers.splice(i, 2, (0-numbers[i+1]))
+          }else if(Number.isNaN(numbers[i]) && i == len) {
+            numbers.pop();
+            ops.pop();
+          }
         }
         for(let x = 0; x < operators.length; x++) {
-            while(ops.indexOf(operators[x]) != -1) {
-                let i = ops.indexOf(operators[x]);
+          while(ops.length > 0) {
                 let t;
-                switch(ops[i]) {
-                    case "*":
-                        t = numbers[i] * numbers[i+1]
+                let check;
+                switch(ops[0]) {
+                    case "-":
+                        console.log("subract");
+                        console.log(numbers, ops)
+                        check = 1
+                        numbers.splice(1, 1, (0-numbers[1]))
+                        ops.splice(0, 1, "+")
+                        console.log(numbers, ops)
                         break;
+                    case "*":
+                    console.log("times");
+                        console.log(numbers[0] * numbers[1])
+                        t = numbers[0] * numbers[1]
+                    console.log(numbers, ops)
+                        break; 
                     case "/":
-                        t = numbers[i] / numbers[i+1]
+                    console.log("divide");
+                        t = numbers[0] / numbers[1]
                         break;
                     case "+":
-                        t = parseInt(numbers[i]) + parseInt(numbers[i+1])
-                        break;
-                    case "-":
-                        t = numbers[i] - numbers[i+1]
+                    console.log("add");
+                        console.log(numbers, ops)
+                        console.log(add(numbers[0], numbers[1]))
+                        t = add(numbers[0], numbers[1])
                         break;
                 }
-                numbers.splice(i, 2, t);
-                ops.splice(i, 1);
-            }
+              if(check == 1) {
+                check = 0;
+              }else {
+                numbers.splice(0, 2, t);
+                ops.splice(0, 1);
+                console.log(numbers, ops)
+              }
+                
+          }
         }
         this.setState((prevState) => {
             if(all.test(this.state.display.charAt(prevState.display.length-1))) {

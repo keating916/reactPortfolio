@@ -30,7 +30,7 @@ export default class Quote extends React.Component {
   
   render() {
     return(
-      <body>
+      <body id="simpsons">
         <h1>Random Simpsons Quotes!</h1>
         <div id="quote-box">
           <div id="qa" className="qa">
@@ -42,7 +42,7 @@ export default class Quote extends React.Component {
           </div>
           <a id="tweet-quote" href={this.state.tweetURL} target="_blank"><img id="twitterImg" src="https://i.ya-webdesign.com/images/twitter-bird-png-2.png" /></a>
         </div>
-        <div><p>API Used: https://thesimpsonsquoteapi.glitch.me/</p><p>By<a href="https://jluboff-portfolio.glitch.me/">Jason Luboff</a></p></div>
+        <div><p>API Used: https://thesimpsonsquoteapi.glitch.me/</p><p>By <a href="https://jluboff-portfolio.glitch.me/" target="_blank">Jason Luboff</a></p></div>
       </body>
     
     )

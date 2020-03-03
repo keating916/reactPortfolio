@@ -77,16 +77,15 @@ export default class RPS extends React.Component {
 
     render() {
         return(
-            <body>
-                <h1>Play a game of Rock Paper, Scissors against the Computer!</h1>
-                <h2 id="score" class="score" style={{color: this.state.textColor}}>Player: {this.state.playerScore}   Computer: {this.state.computerScore}</h2>
-                <h2 id="displayMessage" style={{height: '10px'}}>{this.state.message}</h2>
+            <body class="function">
+                <h1 >Play a game of Rock Paper, Scissors against the Computer!</h1>
+                <h3 id="score" class="score" style={{color: this.state.textColor}}>Player: {this.state.playerScore}   Computer: {this.state.computerScore}</h3>
+                <h3 id="displayMessage" style={{height: '10px'}}>{this.state.message}</h3>
                 <div>
-                    <form>
+                    <form id="selection">
                         <button name="input" id="rock" value="rock" onClick={this.handleClick}>Rock</button>
                         <button name="input" id = "paper" value = "paper" onClick={this.handleClick}>Paper</button>
                         <button name="input" id="scissors" value="scissors" onClick={this.handleClick}>Scissors</button>
-                        
                     </form>
                 </div>
             </body>
