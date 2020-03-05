@@ -80,7 +80,6 @@ export default class Calculator extends React.Component {
     handleEquals() {
         let operators = [ "-","*", "/", "+"];
         let all = /[\*\/\+\-]/g
-        let decimal = /./;
         let numbers = [];
         let n = this.state.display.split(all)
         n.map(e => numbers.push(parseFloat(e)))

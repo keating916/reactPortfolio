@@ -17,7 +17,10 @@ import etch from './assets/etch.jpg';
 import rps from './assets/rps.png';
 import snip from './assets/snip.png';
 
+
 import './index.css';
+import './small.css';
+
 
 const projectData = [
   {
@@ -53,7 +56,7 @@ const projectData = [
       func: Quote,
       img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdT2Y_WWGYds4UsHq1Yk-J_CyWXRQu-41DwuXm6mC8HboAzNWD',
       title: "Simpsons Quote Generator",
-      description: "Funny Quotes pulled from API"
+      description: "Quotes pulled from an API"
   }, 
   {
       id: 'markdown',

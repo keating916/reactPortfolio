@@ -1,3 +1,5 @@
+
+
 html {
   width: 100%;
   align-content: center;
@@ -122,12 +124,6 @@ label,
   max-height: 300px;
 }
 
-@media only screen and (max-width: 300px) {
-  body {
-    background-color: lightblue;
-  }
-}
-
 #projects {
   display: flex;
   justify-content: center;
@@ -177,7 +173,7 @@ label,
 }
 
 #formDiv, #topDiv, #projectDiv {
-  min-width: 100vh;
+  min-width: 100vw;
   padding-top: 8vh;
 }
 
@@ -197,6 +193,7 @@ label,
   height: 40vh;
   padding: 2%;
 }
+
 #display {
   width: 100%;
   text-align: center;
@@ -276,14 +273,7 @@ button {
   padding-bottom: auto;
   margin-top: -5%;
   list-style: none;
-  
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  
-  -webkit-flex-flow: row wrap;
   justify-content: center;
   
 }

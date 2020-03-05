@@ -9,8 +9,9 @@ function Nav() {
           <li className= "navItem"><a href="#projectDiv">Projects</a></li>
           <li className= "navItem"><a href="#formDiv">Contact</a></li>
           <li className= "navItem"><a href="#topDiv">Top</a></li>
-          <li className= "navItem" ><a id="profile-link" href="https://github.com/keating916/" target="_blank">Github</a></li>
-          <li className="navItem"><a id="resume" href={resume} targer="_blank">Resume</a></li>
+          <li className= "navItem navLinks" ><a id="profile-link" href="https://github.com/keating916/" target="_blank">Github</a></li>
+          <li className= "navItem navLinks"><a id="resume" href={resume} targer="_blank">Resume</a></li>
+          
       </ul>
     </nav>
   );
