@@ -219,3 +219,4 @@ ReactDOM.render(<Page />, document.getElementById('root')); /*
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+//git push -f --set-upstream git@github.com:keating916/keating916.github.io.git master

@@ -84,7 +84,7 @@ label,
 }
 
 #welcome-section {
-  height: 100vh;
+  height: fit-content;
   display: inline-block;
   text-align: center;
   max-width: 800px;
@@ -113,7 +113,7 @@ label,
 
 .project-tile {
   width: 20vw;
-  height: 50vh;
+  height: fit-content;
   margin: 2vmin;
 }
 
@@ -137,8 +137,8 @@ label,
   padding-top: 5%; /* Location of the box */
   left: 5%;
   top: 0;
-  width: 90%; /* Full width */
-  height: 90%; /* Full height */
+  width: 90%; /* Almost Full width */
+  height: 90%; /* Almost Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(253, 253, 253, 0.993); /* Solid White*/
@@ -151,7 +151,7 @@ label,
 
 .function {
   width: 80%;
-  height: 100vh;
+  height: fit-content;
   align-content: center;
   text-align: center;
   display: inline-block;
@@ -247,7 +247,7 @@ button {
 }
 
 #googheader, #googfooter, .googleft, .googright, #gLefthead, #gRighthead, #gleftfoot, #grightfoot {
-  display: inline;
+  display: flex;
   text-decoration: none;
   padding: 2%;  
 }
@@ -260,7 +260,7 @@ button {
   width: 100%;
 }
 
-#logo {
+#googlogo {
   width: auto;
   height: auto;
   max-width: 272px;

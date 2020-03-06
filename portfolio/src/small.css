@@ -1,6 +1,6 @@
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 415px) {
     #nav {
-        width: 100vw;
+
         position: fixed;
         top: 0;
         left: 0;
@@ -15,7 +15,7 @@
         display: block;
         color: white;
         text-align: center;
-        padding: 10px 1em;
+        
         text-decoration: none;
     }
 
@@ -35,8 +35,21 @@
     }
 
     .project-tile {
-        width: 80vmax;
-        height: 65vmax;
+        width: 80vmin;
+        height: fit-content;
         padding: 0;
+    }
+
+    .popup {
+        height: 100%;
+        margin: 0;
+    }
+
+    #googfooter, #grightfoot, #gleftfoot {
+        flex-flow: wrap;
+    }
+
+    #googlogo {
+        width: 50vw;
     }
 } 
