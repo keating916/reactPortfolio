@@ -16,10 +16,13 @@ import Markdown from './projects/markdownPreviewer'
 import etch from './assets/etch.jpg';
 import rps from './assets/rps.png';
 import snip from './assets/snip.png';
+import simpsons from './assets/simpsons.png'
 
 
 import './index.css';
 import './small.css';
+import './tablet.css';
+import './large.css';
 
 
 const projectData = [
@@ -54,9 +57,9 @@ const projectData = [
   {
       id: 'quote',
       func: Quote,
-      img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRdT2Y_WWGYds4UsHq1Yk-J_CyWXRQu-41DwuXm6mC8HboAzNWD',
+      img: simpsons,
       title: "Simpsons Quote Generator",
-      description: "Quotes pulled from an API"
+      description: "Funny Quotes pulled from an API"
   }, 
   {
       id: 'markdown',

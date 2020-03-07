@@ -1,4 +1,9 @@
 @media only screen and (max-width: 415px) {
+    body {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+    }
     #nav {
 
         position: fixed;
@@ -27,15 +32,16 @@
         width: 85vw;
         padding: 0;
         margin: 0;
-
     }
 
     form {
         width: 80vw;
+        margin: auto;
+        padding: 2%;
     }
 
     .project-tile {
-        width: 80vmin;
+        width: 80vw;
         height: fit-content;
         padding: 0;
     }
@@ -43,6 +49,9 @@
     .popup {
         height: 100%;
         margin: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
     }
 
     #googfooter, #grightfoot, #gleftfoot {
@@ -51,5 +60,17 @@
 
     #googlogo {
         width: 50vw;
+    }
+
+    #topDiv {
+        padding: 0%;
+    }
+    .tiles-images {
+        width: 80vw;
+    }
+
+    .card {
+        width: 80vw;
+        margin-bottom: 2%;
     }
 } 
