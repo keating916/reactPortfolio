@@ -43,23 +43,19 @@
     }
 
     .project-tile {
-        width: 80vw;
+        width: 60vw;
         height: fit-content;
         margin-bottom: 5%;
     }
 
     .tiles-images {
         margin-top: 3%;
-        width: 95%;
+        width: 55vw;
         max-width: 300px;
         height: 250px;
     }
 
-    #projectDiv {
-        width: 100vw;
-        display: flex;
-        flex-flow: wrap;
-    }
+    
     
     .popup {
         height: 100%;
