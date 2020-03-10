@@ -13,8 +13,6 @@ Function 1
 
 `+"`code is awesome`"+`
 
-![Northern Lights](https://www.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-landscape-407021107);
-
 >May the force be with you
 
 >>Yoda
@@ -35,8 +33,6 @@ Function 1
 [link to Google](http://google.com)
 
 `+"`code is awesome`"+`
-
-![Northern Lights](https://images.pexels.com/photos/66997/pexels-photo-66997.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
 
 >May the force be with you
 

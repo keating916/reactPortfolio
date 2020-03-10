@@ -140,7 +140,6 @@ label{
 }
 
 #markedEditor {
-  width: 100%;
   height: 50vh;
 }
 
@@ -192,6 +191,7 @@ button {
   width: 25%;
   border-radius: 10px;
 }
+
 .end {
   width: 50%;
   height: 100%;
@@ -224,8 +224,6 @@ button {
   padding: 2%;  
 }
 
-
-
 #query {
   border-radius: 15px;
   height: 30px;
@@ -239,11 +237,9 @@ button {
   margin: auto;
 }
 
-
 #googbuttons  {
   padding: 0;
   padding-bottom: auto;
-  margin-top: -5%;
   list-style: none;
   display: flex;
   justify-content: center;

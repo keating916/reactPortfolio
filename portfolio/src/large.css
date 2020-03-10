@@ -33,4 +33,33 @@
         padding-left: 5%;
         padding-right: 5%; 
     }
+
+    #etchContainer {
+        width: 50vh;
+        height: 50vh;
+    }
+
+    #markedEditor {
+        width: 100%;
+    }
+
+    #googbuttons {
+        margin-top: -8%;
+    }
+
+    #projectDiv {
+        
+        display: inline-flexbox;
+        flex-flow: wrap;
+    }
+
+    #projects {
+        margin: auto;
+        display: inline-flex;
+        flex-flow: wrap;
+        text-align: center;
+        width: 80vw;
+        align-items: center;
+        align-content: center;
+    }
 }

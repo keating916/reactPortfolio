@@ -73,7 +73,22 @@
         width: 50vw;
     }
 
-    
+    #etchContainer {
+        width: 80vmin;
+        height: 80vmin;
+        margin: auto;
+        padding: 0;
+    }
+
+    #markedEditor {
+        width: 90%;
+        height: 40vh;
+    }
+
+    #markedContainer {
+        width: 90%;
+        margin: auto;  
+    }
     
 
 } 

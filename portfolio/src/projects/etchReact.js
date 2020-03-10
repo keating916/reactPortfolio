@@ -50,8 +50,6 @@ export default class Etch extends React.Component {
                 {display: 'grid',
                 gridTemplateColumns: `repeat(${x}, 1fr)`,
                 gridTemplateRows: `repeat(${x}, 1fr)`,
-                height: '400px',
-                width: '400px',
                 border: '1px solid black',
                 padding: 'auto'}
             )
@@ -64,11 +62,13 @@ export default class Etch extends React.Component {
                         <h3>Click the button to reset the drawing area</h3>
                         <h3>You can also change the color!</h3>
                     </div>
-                    <button id = "clear" onClick={this.handleClear}>Clear</button>
-                    <button id="color" onClick={this.handleColor}>Change Color</button>
+                    <div id="buttonDiv">
+                        <button id = "clear" onClick={this.handleClear}>Change Box</button>
+                        <button id="color" onClick={this.handleColor}>Change Color</button>
+                    </div>
                 </div>
-                <div id = "etchContainer" style={divGrid(this.state.columns)}>
-                    {this.state.array.map(i => <div id={i} onMouseOver={e => this.handleMouseOver(e)} style={{backgroundColor: "white"}} ></div>)}</div>
+                <div id="etchContainer" style={divGrid(this.state.columns)}>
+                    {this.state.array.map(i => <div id={i} onTouchMove={e=> this.handleMouseOver(e)} onTouchStart = {e => this.handleMouseOver(e)} onMouseOver={e => this.handleMouseOver(e)} style={{backgroundColor: "white"}} ></div>)}</div>
             </body>
         )
     }
