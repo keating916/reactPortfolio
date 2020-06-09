@@ -201,13 +201,13 @@ class Page extends React.Component {
                 <div id="topDiv">
                   <Header />
                 </div>
-                
-                <div id="formDiv">
-                  {form(this.state.formRender, this.state.name, this.state.email, this.state.comments, this.handleChange, this.handleSubmit)}
-                </div>
                 <div id="projectDiv">
                   <Projects projects={projectData} />
                 </div>
+                <div id="formDiv">
+                  {form(this.state.formRender, this.state.name, this.state.email, this.state.comments, this.handleChange, this.handleSubmit)}
+                </div>
+                
                 
             </div>  
         )
